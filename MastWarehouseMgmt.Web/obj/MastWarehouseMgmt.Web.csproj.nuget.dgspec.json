@@ -4,14 +4,14 @@
     "D:\\repos\\MastWarehouseMgmt\\MastWarehouseMgmt.Web\\MastWarehouseMgmt.Web.csproj": {}
   },
   "projects": {
-    "D:\\repos\\MastWarehouseMgmt\\MastWarehouseMgmt.Web\\MastWarehouseMgmt.Web.csproj": {
+    "D:\\repos\\MastWarehouseMgmt\\MastWarehouseMgmt.Data\\MastWarehouseMgmt.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\repos\\MastWarehouseMgmt\\MastWarehouseMgmt.Web\\MastWarehouseMgmt.Web.csproj",
-        "projectName": "MastWarehouseMgmt.Web",
-        "projectPath": "D:\\repos\\MastWarehouseMgmt\\MastWarehouseMgmt.Web\\MastWarehouseMgmt.Web.csproj",
+        "projectUniqueName": "D:\\repos\\MastWarehouseMgmt\\MastWarehouseMgmt.Data\\MastWarehouseMgmt.Data.csproj",
+        "projectName": "MastWarehouseMgmt.Data",
+        "projectPath": "D:\\repos\\MastWarehouseMgmt\\MastWarehouseMgmt.Data\\MastWarehouseMgmt.Data.csproj",
         "packagesPath": "C:\\Users\\Khoren\\.nuget\\packages\\",
-        "outputPath": "D:\\repos\\MastWarehouseMgmt\\MastWarehouseMgmt.Web\\obj\\",
+        "outputPath": "D:\\repos\\MastWarehouseMgmt\\MastWarehouseMgmt.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -42,6 +42,99 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\repos\\MastWarehouseMgmt\\MastWarehouseMgmt.Web\\MastWarehouseMgmt.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\repos\\MastWarehouseMgmt\\MastWarehouseMgmt.Web\\MastWarehouseMgmt.Web.csproj",
+        "projectName": "MastWarehouseMgmt.Web",
+        "projectPath": "D:\\repos\\MastWarehouseMgmt\\MastWarehouseMgmt.Web\\MastWarehouseMgmt.Web.csproj",
+        "packagesPath": "C:\\Users\\Khoren\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\MastWarehouseMgmt\\MastWarehouseMgmt.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Khoren\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\repos\\MastWarehouseMgmt\\MastWarehouseMgmt.Data\\MastWarehouseMgmt.Data.csproj": {
+                "projectPath": "D:\\repos\\MastWarehouseMgmt\\MastWarehouseMgmt.Data\\MastWarehouseMgmt.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

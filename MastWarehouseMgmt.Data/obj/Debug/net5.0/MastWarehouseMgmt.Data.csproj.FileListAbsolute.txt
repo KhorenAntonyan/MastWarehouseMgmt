@@ -1,0 +1,15 @@
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Data\bin\Debug\net5.0\MastWarehouseMgmt.Data.deps.json
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Data\bin\Debug\net5.0\MastWarehouseMgmt.Data.runtimeconfig.json
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Data\bin\Debug\net5.0\MastWarehouseMgmt.Data.runtimeconfig.dev.json
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Data\bin\Debug\net5.0\MastWarehouseMgmt.Data.dll
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Data\bin\Debug\net5.0\ref\MastWarehouseMgmt.Data.dll
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Data\bin\Debug\net5.0\MastWarehouseMgmt.Data.pdb
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Data\obj\Debug\net5.0\MastWarehouseMgmt.Data.csprojAssemblyReference.cache
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Data\obj\Debug\net5.0\MastWarehouseMgmt.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Data\obj\Debug\net5.0\MastWarehouseMgmt.Data.AssemblyInfoInputs.cache
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Data\obj\Debug\net5.0\MastWarehouseMgmt.Data.AssemblyInfo.cs
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Data\obj\Debug\net5.0\MastWarehouseMgmt.Data.csproj.CoreCompileInputs.cache
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Data\obj\Debug\net5.0\MastWarehouseMgmt.Data.dll
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Data\obj\Debug\net5.0\ref\MastWarehouseMgmt.Data.dll
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Data\obj\Debug\net5.0\MastWarehouseMgmt.Data.pdb
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Data\obj\Debug\net5.0\MastWarehouseMgmt.Data.genruntimeconfig.cache
