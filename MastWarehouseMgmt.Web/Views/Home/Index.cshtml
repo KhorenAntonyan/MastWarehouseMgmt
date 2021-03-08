@@ -1,1 +1,55 @@
-﻿<h1 class="justify-content-center">Склад</h1>
+﻿@model IndexViewModel 
+
+<div class="text-center">
+    <h1>Склад</h1>
+    <div class="indextext">
+        <p>@Model.FreeSpace Свободных мест для продукции</p>
+    </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: @Model.WarehouseProgress%" aria-valuenow="@Model.WarehouseProgress" aria-valuemin="0" aria-valuemax="100">@Model.WarehouseProgress%</div>
+    </div>
+</div>
+
+
+<div class="row mt-4 justify-content-around">
+    <div class="col-5 ">
+        <h5 class="text-center pb-2">Готовая продукция</h5>
+        <table class="table table-striped indextable">
+            <thead>
+                <tr>
+                    <th scope="col">Название</th>
+                    <th scope="col">Количество: ведро</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model.Products)
+                {
+                    <tr>
+                        <th scope="row">@product.Name</th>
+                        <td>@product.Quantity</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-5 ">
+        <h5 class="text-center pb-2">Сырье</h5>
+        <table class="table table-striped indextable">
+            <thead>
+                <tr>
+                    <th scope="col">Название</th>
+                    <th scope="col">Количество: кг; шт</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var material in Model.Materials)
+                {
+                    <tr>
+                        <th scope="row">@material.Name</th>
+                        <td>@material.Quantity</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

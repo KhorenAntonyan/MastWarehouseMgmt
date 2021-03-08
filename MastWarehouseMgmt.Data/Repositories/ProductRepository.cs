@@ -27,5 +27,10 @@ namespace MastWarehouseMgmt.Data.Repositories
         {
             return _context.Products.ToList();
         }
+
+        public int GetQuantitySum()
+        {
+            return _context.Products.Sum(item => item.Quantity);
+        }
     }
 }

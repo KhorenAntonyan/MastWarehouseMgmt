@@ -9,33 +9,35 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#" style="color:white;">Logo</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        @*<nav class="navbar navbar-expand-lg navbar-light bg-light">*@
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom shadow mb-3">
+            <div class="container">
+                @*<a class="navbar-brand" href="#" style="color:white;">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>*@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-around" style="width:100%;">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="color:white;">Продукция</a>
+                            <a class="nav-link text-dark font-weight-bold" href="#">Продукция</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="color:white;">Сырье</a>
+                            <a class="nav-link text-dark font-weight-bold" href="#">Сырье</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="color:white;">Продажи</a>
+                            <a class="nav-link text-dark font-weight-bold" href="#">Продажи</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div>
+    <div class="container mt-5">
         @RenderBody()
     </div>
 
     <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>

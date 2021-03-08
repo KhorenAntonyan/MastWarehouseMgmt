@@ -1,2 +1,11 @@
 ﻿body {
 }
+
+.indextext p {
+    font-size: 25px;
+
+}
+
+.indextable th {
+    width: 50%;
+}

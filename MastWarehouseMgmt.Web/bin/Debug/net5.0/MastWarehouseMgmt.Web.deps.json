@@ -34,6 +34,7 @@
       "MastWarehouseMgmt.Web/1.0.0": {
         "dependencies": {
           "MastWarehouseMgmt.Data": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "5.0.3",
           "Microsoft.EntityFrameworkCore.Design": "5.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
@@ -219,7 +220,7 @@
           "System.Linq.Expressions.Reference": "5.0.0.0",
           "System.Linq.Parallel": "5.0.0.0",
           "System.Linq.Queryable": "5.0.0.0",
-          "System.Memory": "5.0.0.0",
+          "System.Memory.Reference": "5.0.0.0",
           "System.Net": "4.0.0.0",
           "System.Net.Http": "5.0.0.0",
           "System.Net.Http.Json": "5.0.0.0",
@@ -247,13 +248,13 @@
           "System.Reflection.Emit.ILGeneration.Reference": "5.0.0.0",
           "System.Reflection.Emit.Lightweight.Reference": "5.0.0.0",
           "System.Reflection.Extensions.Reference": "5.0.0.0",
-          "System.Reflection.Metadata": "5.0.0.0",
+          "System.Reflection.Metadata.Reference": "5.0.0.0",
           "System.Reflection.Primitives.Reference": "5.0.0.0",
           "System.Reflection.TypeExtensions.Reference": "5.0.0.0",
           "System.Resources.Reader": "5.0.0.0",
           "System.Resources.ResourceManager.Reference": "5.0.0.0",
           "System.Resources.Writer": "5.0.0.0",
-          "System.Runtime.CompilerServices.Unsafe": "5.0.0.0",
+          "System.Runtime.CompilerServices.Unsafe.Reference": "5.0.0.0",
           "System.Runtime.CompilerServices.VisualC": "5.0.0.0",
           "System.Runtime.Reference": "5.0.0.0",
           "System.Runtime.Extensions.Reference": "5.0.0.0",
@@ -331,6 +332,181 @@
             "assemblyVersion": "2.8.0.0",
             "fileVersion": "2.8.26.1919"
           }
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Razor.Extensions/5.0.3": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Razor.Language": "5.0.3",
+          "Microsoft.CodeAnalysis.Razor": "5.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll": {
+            "assemblyVersion": "5.0.3.0",
+            "fileVersion": "5.0.321.7303"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/5.0.3": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Razor.Extensions": "5.0.3",
+          "Microsoft.CodeAnalysis.Razor": "5.0.3",
+          "Microsoft.Extensions.DependencyModel": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll": {
+            "assemblyVersion": "5.0.3.0",
+            "fileVersion": "5.0.321.7303"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Razor.Language/5.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {
+            "assemblyVersion": "5.0.3.0",
+            "fileVersion": "5.0.321.7303"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {}
+        }
+      },
+      "Microsoft.CodeAnalysis.Analyzers/3.0.0": {},
+      "Microsoft.CodeAnalysis.Common/3.8.0": {
+        "dependencies": {
+          "Microsoft.CodeAnalysis.Analyzers": "3.0.0",
+          "System.Collections.Immutable": "5.0.0",
+          "System.Memory": "4.5.4",
+          "System.Reflection.Metadata": "5.0.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1",
+          "System.Text.Encoding.CodePages": "4.7.0",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.CodeAnalysis.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.800.20.56202"
+          }
+        },
+        "resources": {
+          "lib/netcoreapp3.1/cs/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netcoreapp3.1/de/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.1/es/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.1/fr/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netcoreapp3.1/it/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netcoreapp3.1/ja/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.1/ko/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.1/pl/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/netcoreapp3.1/ru/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.1/tr/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.CodeAnalysis.dll": {}
+        }
+      },
+      "Microsoft.CodeAnalysis.CSharp/3.8.0": {
+        "dependencies": {
+          "Microsoft.CodeAnalysis.Common": "3.8.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.800.20.56202"
+          }
+        },
+        "resources": {
+          "lib/netcoreapp3.1/cs/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netcoreapp3.1/de/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netcoreapp3.1/es/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netcoreapp3.1/fr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netcoreapp3.1/it/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netcoreapp3.1/ja/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netcoreapp3.1/ko/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netcoreapp3.1/pl/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/netcoreapp3.1/ru/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netcoreapp3.1/tr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.dll": {}
+        }
+      },
+      "Microsoft.CodeAnalysis.Razor/5.0.3": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Razor.Language": "5.0.3",
+          "Microsoft.CodeAnalysis.CSharp": "3.8.0",
+          "Microsoft.CodeAnalysis.Common": "3.8.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.CodeAnalysis.Razor.dll": {
+            "assemblyVersion": "5.0.3.0",
+            "fileVersion": "5.0.321.7303"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.CodeAnalysis.Razor.dll": {}
         }
       },
       "Microsoft.CSharp/4.7.0": {},
@@ -525,6 +701,17 @@
         }
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {},
+      "Microsoft.Extensions.DependencyModel/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll": {}
+        }
+      },
       "Microsoft.Extensions.Logging/5.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "5.0.1",
@@ -931,6 +1118,7 @@
           "System.Threading": "4.3.0"
         }
       },
+      "System.Memory/4.5.4": {},
       "System.Net.NameResolution/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1042,6 +1230,11 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "System.Reflection.Metadata/5.0.0": {
+        "compile": {
+          "lib/netstandard2.0/System.Reflection.Metadata.dll": {}
+        }
+      },
       "System.Reflection.Primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1089,6 +1282,7 @@
           }
         }
       },
+      "System.Runtime.CompilerServices.Unsafe/4.7.1": {},
       "System.Runtime.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1234,13 +1428,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Threading.Tasks.Extensions/4.3.0": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Threading.Tasks": "4.3.0"
-        }
-      },
+      "System.Threading.Tasks.Extensions/4.5.4": {},
       "System.Windows.Extensions/4.7.0": {
         "dependencies": {
           "System.Drawing.Common": "4.7.0"
@@ -1262,7 +1450,7 @@
           "System.Text.Encoding.Extensions": "4.3.0",
           "System.Text.RegularExpressions": "4.3.0",
           "System.Threading.Tasks": "4.3.0",
-          "System.Threading.Tasks.Extensions": "4.3.0"
+          "System.Threading.Tasks.Extensions": "4.5.4"
         }
       },
       "System.Xml.XDocument/4.3.0": {
@@ -2427,7 +2615,7 @@
         },
         "compileOnly": true
       },
-      "System.Memory/5.0.0.0": {
+      "System.Memory.Reference/5.0.0.0": {
         "compile": {
           "System.Memory.dll": {}
         },
@@ -2595,7 +2783,7 @@
         },
         "compileOnly": true
       },
-      "System.Reflection.Metadata/5.0.0.0": {
+      "System.Reflection.Metadata.Reference/5.0.0.0": {
         "compile": {
           "System.Reflection.Metadata.dll": {}
         },
@@ -2631,7 +2819,7 @@
         },
         "compileOnly": true
       },
-      "System.Runtime.CompilerServices.Unsafe/5.0.0.0": {
+      "System.Runtime.CompilerServices.Unsafe.Reference/5.0.0.0": {
         "compile": {
           "System.Runtime.CompilerServices.Unsafe.dll": {}
         },
@@ -3030,6 +3218,55 @@
       "path": "humanizer.core/2.8.26",
       "hashPath": "humanizer.core.2.8.26.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.Mvc.Razor.Extensions/5.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OQDxOOJMA7/ZMBv5yYmWYt9zDiwV/OnSleeWhlyvqnhei76ONXbbLRx/4HG7MuoNvZiucBr3b+kcVkO21oYQPA==",
+      "path": "microsoft.aspnetcore.mvc.razor.extensions/5.0.3",
+      "hashPath": "microsoft.aspnetcore.mvc.razor.extensions.5.0.3.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/5.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-o74SJhXzVlRP6001dwPgQeQbEJawUheeMFt0Ee4KS2qG6M4apjYmUk5/HtfAfIramex8BjFAIL59VZDPUVHYig==",
+      "path": "microsoft.aspnetcore.mvc.razor.runtimecompilation/5.0.3",
+      "hashPath": "microsoft.aspnetcore.mvc.razor.runtimecompilation.5.0.3.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Razor.Language/5.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YglUiHOuckO+sebtbNQsDdy+0W7zp3UmlO/N0J1KJfadwvMp6pTMPpEMJoEvfjcgJpNzdM6dS9PCYLHvYgsH5w==",
+      "path": "microsoft.aspnetcore.razor.language/5.0.3",
+      "hashPath": "microsoft.aspnetcore.razor.language.5.0.3.nupkg.sha512"
+    },
+    "Microsoft.CodeAnalysis.Analyzers/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ojG5pGAhTPmjxRGTNvuszO3H8XPZqksDwr9xLd4Ae/JBjZZdl6GuoLk7uLMf+o7yl5wO0TAqoWcEKkEWqrZE5g==",
+      "path": "microsoft.codeanalysis.analyzers/3.0.0",
+      "hashPath": "microsoft.codeanalysis.analyzers.3.0.0.nupkg.sha512"
+    },
+    "Microsoft.CodeAnalysis.Common/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8YTZ7GpsbTdC08DITx7/kwV0k4SC6cbBAFqc13cOm5vKJZcEIAh51tNSyGSkWisMgYCr96B2wb5Zri1bsla3+g==",
+      "path": "microsoft.codeanalysis.common/3.8.0",
+      "hashPath": "microsoft.codeanalysis.common.3.8.0.nupkg.sha512"
+    },
+    "Microsoft.CodeAnalysis.CSharp/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hKqFCUSk9TIMBDjiYMF8/ZfK9p9mzpU+slM73CaCHu4ctfkoqJGHLQhyT8wvrYsIg+ufrUWBF8hcJYmyr5rc5Q==",
+      "path": "microsoft.codeanalysis.csharp/3.8.0",
+      "hashPath": "microsoft.codeanalysis.csharp.3.8.0.nupkg.sha512"
+    },
+    "Microsoft.CodeAnalysis.Razor/5.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ga6JKlJ9rXo2i6K/0F3lFWU6/cDudhUhUXY/LsllsPNz1rfDYW4I/qCulivn6qqme8EqKRcgEB0n9kR6NfN/KA==",
+      "path": "microsoft.codeanalysis.razor/5.0.3",
+      "hashPath": "microsoft.codeanalysis.razor.5.0.3.nupkg.sha512"
+    },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -3127,6 +3364,13 @@
       "sha512": "sha512-ORj7Zh81gC69TyvmcUm9tSzytcy8AVousi+IVRAI8nLieQjOFryRusSFh7+aLk16FN9pQNqJAiMd7BTKINK0kA==",
       "path": "microsoft.extensions.dependencyinjection.abstractions/5.0.0",
       "hashPath": "microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyModel/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-umBECCoMC+sOUgm083yFr8SxTobUOcPFH4AXigdO2xJiszCHAnmeDl4qPphJt+oaJ/XIfV1wOjIts2nRnki61Q==",
+      "path": "microsoft.extensions.dependencymodel/5.0.0",
+      "hashPath": "microsoft.extensions.dependencymodel.5.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/5.0.0": {
       "type": "package",
@@ -3408,6 +3652,13 @@
       "path": "system.linq.expressions/4.3.0",
       "hashPath": "system.linq.expressions.4.3.0.nupkg.sha512"
     },
+    "System.Memory/4.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+      "path": "system.memory/4.5.4",
+      "hashPath": "system.memory.4.5.4.nupkg.sha512"
+    },
     "System.Net.NameResolution/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -3478,6 +3729,13 @@
       "path": "system.reflection.extensions/4.3.0",
       "hashPath": "system.reflection.extensions.4.3.0.nupkg.sha512"
     },
+    "System.Reflection.Metadata/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5NecZgXktdGg34rh1OenY1rFNDCI8xSjFr+Z4OU4cU06AQHUdRnIIEeWENu3Wl4YowbzkymAIMvi3WyK9U53pQ==",
+      "path": "system.reflection.metadata/5.0.0",
+      "hashPath": "system.reflection.metadata.5.0.0.nupkg.sha512"
+    },
     "System.Reflection.Primitives/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -3512,6 +3770,13 @@
       "sha512": "sha512-NdvNRjTPxYvIEhXQszT9L9vJhdQoX6AQ0AlhjTU+5NqFQVuacJTfhPVAvtGWNA2OJCqRiR/okBcZgMwI6MqcZg==",
       "path": "system.runtime.caching/4.7.0",
       "hashPath": "system.runtime.caching.4.7.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zOHkQmzPCn5zm/BH+cxC1XbUS3P4Yoi3xzW7eRgVpDR2tPGSzyMZ17Ig1iRkfJuY0nhxkQQde8pgePNiA7z7TQ==",
+      "path": "system.runtime.compilerservices.unsafe/4.7.1",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512"
     },
     "System.Runtime.Extensions/4.3.0": {
       "type": "package",
@@ -3653,12 +3918,12 @@
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
-    "System.Threading.Tasks.Extensions/4.3.0": {
+    "System.Threading.Tasks.Extensions/4.5.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-npvJkVKl5rKXrtl1Kkm6OhOUaYGEiF9wFbppFRWSMoApKzt2PiPHT2Bb8a5sAWxprvdOAtvaARS9QYMznEUtug==",
-      "path": "system.threading.tasks.extensions/4.3.0",
-      "hashPath": "system.threading.tasks.extensions.4.3.0.nupkg.sha512"
+      "sha512": "sha512-zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
+      "path": "system.threading.tasks.extensions/4.5.4",
+      "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
     },
     "System.Windows.Extensions/4.7.0": {
       "type": "package",
@@ -4615,7 +4880,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Memory/5.0.0.0": {
+    "System.Memory.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -4755,7 +5020,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Reflection.Metadata/5.0.0.0": {
+    "System.Reflection.Metadata.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -4785,7 +5050,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Runtime.CompilerServices.Unsafe/5.0.0.0": {
+    "System.Runtime.CompilerServices.Unsafe.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

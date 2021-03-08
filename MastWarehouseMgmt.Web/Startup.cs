@@ -1,4 +1,6 @@
 using MastWarehouseMgmt.Data;
+using MastWarehouseMgmt.Data.Repositories;
+using MastWarehouseMgmt.Data.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -26,7 +28,10 @@ namespace MastWarehouseMgmt.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MastDatabase")));
+            services.AddScoped<IMaterialRepository, MaterialRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
