@@ -1,0 +1,43 @@
+﻿@model List<ProductionHistoryViewModel>
+<h1 class="text-center">История производства</h1>
+<a class="@*btn btn-primary*@" asp-action="AddProduction" role="button">Добавить</a>
+
+<table class="table table-striped mt-5 indextable">
+    <thead>
+        <tr>
+            <th scope="col">Дата</th>
+            <th scope="col">Название</th>
+            <th scope="col">Количество</th>
+            <th scope="col">Цемент</th>
+            <th scope="col">Песок</th>
+            <th scope="col">CR400</th>
+            <th scope="col">Гипс</th>
+            <th scope="col">Литий</th>
+            <th scope="col">Акронал</th>
+            <th scope="col">Сода</th>
+            <th scope="col">Клей</th>
+            <th scope="col">C3</th>
+            <th scope="col">Удалить</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td scope="row">@item.CreatedDate</td>
+                <td scope="row">@item.ProductName</td>
+                <td scope="row">@item.Quantity</td>
+                <td scope="row">@item.Cement</td>
+                <td scope="row">@item.Sand</td>
+                <td scope="row">@item.CR400</td>
+                <td scope="row">@item.Gypsum</td>
+                <td scope="row">@item.Lithium</td>
+                <td scope="row">@item.Acronal</td>
+                <td scope="row">@item.Soda</td>
+                <td scope="row">@item.Glue</td>
+                <td scope="row">@item.C3</td>
+                <td scope="row"><a class="btn btn-danger" href="#" role="button">Удалить</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

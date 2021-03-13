@@ -14,5 +14,6 @@ namespace MastWarehouseMgmt.Data.Entities
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
         public bool IsDeleted { get; set; }
+        public ICollection<ProductionHistory> ProductionHistories { get; set; }
     }
 }

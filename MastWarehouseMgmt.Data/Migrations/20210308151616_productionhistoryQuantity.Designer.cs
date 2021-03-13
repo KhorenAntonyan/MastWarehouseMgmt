@@ -4,14 +4,16 @@ using MastWarehouseMgmt.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MastWarehouseMgmt.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210308151616_productionhistoryQuantity")]
+    partial class productionhistoryQuantity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,9 +83,6 @@ namespace MastWarehouseMgmt.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<double>("Acronal")
-                        .HasColumnType("float");
-
-                    b.Property<double>("C3")
                         .HasColumnType("float");
 
                     b.Property<double>("CR400")

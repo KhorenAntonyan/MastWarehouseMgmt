@@ -385,3 +385,5 @@ D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\bin\Debug\net5.0\tr\Microsoft.C
 D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\MastWarehouseMgmt.Web.MvcApplicationPartsAssemblyInfo.cs
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Home\Production.cshtml.g.cs
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Home\AddProduction.cshtml.g.cs

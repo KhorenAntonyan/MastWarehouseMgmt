@@ -1,0 +1,66 @@
+﻿@model ProductionHistoryViewModel
+
+<form class="row pt-5" asp-action="AddProduction" method="post">
+    <div class="col-4">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Дата</label>
+            <input type="date" class="form-control" asp-for="CreatedDate">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Цемент</label>
+            <input type="number" class="form-control" asp-for="Cement">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Гипс</label>
+            <input type="number" class="form-control" asp-for="Gypsum">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Сода</label>
+            <input type="number" class="form-control" asp-for="Soda">
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Вид продукции</label>
+            <select class="custom-select" asp-for="ProductId" asp-items="ViewBag.Products">
+                <option selected disabled value="">Выбрать</option>
+
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">CR400</label>
+            <input type="number" class="form-control" asp-for="CR400">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Литий</label>
+            <input type="number" class="form-control" asp-for="Lithium">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">C3</label>
+            <input type="number" class="form-control" asp-for="C3">
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Количество</label>
+            <input type="number" class="form-control" asp-for="Quantity">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Песок</label>
+            <input type="number" class="form-control" asp-for="Sand">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Акронал</label>
+            <input type="number" class="form-control" asp-for="Acronal">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Клей</label>
+            <input type="number" class="form-control" asp-for="Glue">
+        </div>
+    </div>
+    <div class="row form-group justify-content-center" style="width: 100%;">
+        <button type="submit" class="btn btn-success mr-5">Добавить</button>
+        <button asp-action="Production" class="btn btn-danger">Отмена</button>
+    </div>
+</form>
+

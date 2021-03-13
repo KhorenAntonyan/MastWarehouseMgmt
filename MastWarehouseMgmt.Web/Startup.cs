@@ -32,6 +32,7 @@ namespace MastWarehouseMgmt.Web
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MastDatabase")));
             services.AddScoped<IMaterialRepository, MaterialRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductionHistoryRepository, ProductionHistoryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
