@@ -1,18 +1,13 @@
-﻿using MastWarehouseMgmt.Data.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace MastWarehouseMgmt.Web.ViewModels
+namespace MastWarehouseMgmt.Data.Models
 {
-    public class ProductionHistoryViewModel
+    public class UpdateMaterials
     {
-
-        public string ProductName { get; set; }
-        public int ProductId { get; set; }
-        public int ProductHistoryId { get; set; }
-        public int Quantity { get; set; }
         public double Cement { get; set; }
         public double CR400 { get; set; }
         public double Sand { get; set; }
@@ -22,6 +17,5 @@ namespace MastWarehouseMgmt.Web.ViewModels
         public double Soda { get; set; }
         public double Glue { get; set; }
         public double C3 { get; set; }
-        public DateTime CreatedDate { get; set; }
     }
 }

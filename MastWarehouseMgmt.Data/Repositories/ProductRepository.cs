@@ -32,5 +32,12 @@ namespace MastWarehouseMgmt.Data.Repositories
         {
             return _context.Products.Sum(item => item.Quantity);
         }
+
+        public void UpdateProduct(int id, int quantity)
+        {
+            var Id = _context.Products.First(a => a.ProductId == id);
+            Id.Quantity += quantity;
+            _context.SaveChanges();
+        }
     }
 }

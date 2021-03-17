@@ -1,6 +1,6 @@
 ﻿@model List<ProductionHistoryViewModel>
 <h1 class="text-center">История производства</h1>
-<a class="@*btn btn-primary*@" asp-action="AddProduction" role="button">Добавить</a>
+<a class="btn btn-primary" asp-action="AddProduction" role="button">Добавить</a>
 
 <table class="table table-striped mt-5 indextable">
     <thead>
@@ -36,7 +36,8 @@
                 <td scope="row">@item.Soda</td>
                 <td scope="row">@item.Glue</td>
                 <td scope="row">@item.C3</td>
-                <td scope="row"><a class="btn btn-danger" href="#" role="button">Удалить</a></td>
+                @*<td scope="row"><a class="btn btn-danger" href="#" role="button">Удалить</a></td>*@
+                <td scope="row"><button type="submit" class="btn btn-danger" onclick="location.href='@Url.Action("DeleteProduction", "Home", new { productionHistoryId = item.ProductHistoryId })'">Удалить</button></td>
             </tr>
         }
     </tbody>

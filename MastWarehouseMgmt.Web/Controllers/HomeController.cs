@@ -1,4 +1,5 @@
 ﻿using MastWarehouseMgmt.Data.Entities;
+using MastWarehouseMgmt.Data.Models;
 using MastWarehouseMgmt.Data.Repositories.Interfaces;
 using MastWarehouseMgmt.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +27,7 @@ namespace MastWarehouseMgmt.Web.Controllers
         public IActionResult Index()
         {
             var materials = _materialRepository.GetAllMaterial();
-            var products = _productRepository.GetAllProducts();
+            var products = _productRepository.GetAllProducts().Where(p => p.IsDeleted == false).ToList();
             var quantitySum = _productRepository.GetQuantitySum();
             IndexViewModel indexViewModel = new IndexViewModel()
             {
@@ -40,7 +41,7 @@ namespace MastWarehouseMgmt.Web.Controllers
 
         public IActionResult Production()
         {
-            var productionHistory = _productionHistoryRepository.GetAllProductions();
+            var productionHistory = _productionHistoryRepository.GetAllProductions().Where(p => p.IsDeleted == false).ToList();
             List<ProductionHistoryViewModel> productionHistoryViewModel = new List<ProductionHistoryViewModel>();
 
             foreach (var item in productionHistory)
@@ -48,6 +49,8 @@ namespace MastWarehouseMgmt.Web.Controllers
                 ProductionHistoryViewModel ProductionHistoryViewModel = new ProductionHistoryViewModel
                 {
                     ProductName = item.Product.Name,
+                    ProductId = item.Product.ProductId,
+                    ProductHistoryId = item.ProductionHistoryId,
                     Quantity = item.Quantity,
                     Cement = item.Cement,
                     CR400 = item.CR400,
@@ -64,6 +67,29 @@ namespace MastWarehouseMgmt.Web.Controllers
             }
 
             return View(productionHistoryViewModel);
+        }
+
+        public IActionResult DeleteProduction(int productionHistoryId)
+        {
+            _productionHistoryRepository.DeleteProduction(productionHistoryId);
+            var production = _productionHistoryRepository.GetProductionById(productionHistoryId);
+            _productRepository.UpdateProduct(production.ProductId, -production.Quantity);
+
+            UpdateMaterials updateMaterial = new UpdateMaterials()
+            {
+                Cement = production.Cement,
+                CR400 = production.CR400,
+                Sand = production.Sand,
+                Gypsum = production.Gypsum,
+                Lithium = production.Lithium,
+                Acronal = production.Acronal,
+                Soda = production.Soda,
+                Glue = production.Glue,
+                C3 = production.C3
+            };
+            _materialRepository.UpdateMaterials(updateMaterial);
+
+            return RedirectToAction("Index");
         }
 
         public IActionResult AddProduction()
@@ -91,6 +117,21 @@ namespace MastWarehouseMgmt.Web.Controllers
                 C3 = addProduction.C3
             };
 
+            UpdateMaterials updateMaterial = new UpdateMaterials()
+            {
+                Cement = -addProduction.Cement,
+                CR400 = -addProduction.CR400,
+                Sand = -addProduction.Sand,
+                Gypsum = -addProduction.Gypsum,
+                Lithium = -addProduction.Lithium,
+                Acronal = -addProduction.Acronal,
+                Soda = -addProduction.Soda,
+                Glue = -addProduction.Glue,
+                C3 = -addProduction.C3
+            };
+
+            _productRepository.UpdateProduct(addProduction.ProductId, addProduction.Quantity);
+            _materialRepository.UpdateMaterials(updateMaterial);
             _productionHistoryRepository.AddProduction(production);
             return RedirectToAction("Production");
         }

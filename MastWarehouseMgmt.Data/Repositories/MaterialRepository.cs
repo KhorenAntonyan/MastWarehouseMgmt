@@ -1,4 +1,5 @@
 ﻿using MastWarehouseMgmt.Data.Entities;
+using MastWarehouseMgmt.Data.Models;
 using MastWarehouseMgmt.Data.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,15 @@ namespace MastWarehouseMgmt.Data.Repositories
         public List<Material> GetAllMaterial()
         {
             return _context.Materials.ToList();
+        }
+
+        public void UpdateMaterials(UpdateMaterials updateMaterials)
+        {
+            var cement = _context.Materials.First(m => m.Name == "Цемент");
+            cement.Quantity += updateMaterials.Cement;
+            var cr400 = _context.Materials.First(m => m.Name == "CR400");
+            cr400.Quantity += updateMaterials.CR400;
+            _context.SaveChanges();
         }
     }
 }

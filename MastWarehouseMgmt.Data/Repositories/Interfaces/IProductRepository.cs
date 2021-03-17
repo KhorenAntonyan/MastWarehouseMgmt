@@ -12,5 +12,6 @@ namespace MastWarehouseMgmt.Data.Repositories.Interfaces
         void AddProduct(Product product);
         List<Product> GetAllProducts();
         int GetQuantitySum();
+        public void UpdateProduct(int id, int quantity);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MastWarehouseMgmt.Data.Entities;
+using MastWarehouseMgmt.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace MastWarehouseMgmt.Data.Repositories.Interfaces
     {
         void AddMaterial(Material material);
         List<Material> GetAllMaterial();
+        public void UpdateMaterials(UpdateMaterials updateMaterials);
     }
 }

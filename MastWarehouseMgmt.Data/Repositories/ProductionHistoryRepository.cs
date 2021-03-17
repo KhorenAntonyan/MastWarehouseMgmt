@@ -27,5 +27,17 @@ namespace MastWarehouseMgmt.Data.Repositories
         {
             return _context.ProductionHistories.Include(p=> p.Product).ToList();
         }
+
+        public void DeleteProduction(int id)
+        {
+            var production = _context.ProductionHistories.First(a => a.ProductionHistoryId == id);
+            production.IsDeleted = true;
+            _context.SaveChanges();
+        }
+
+        public ProductionHistory GetProductionById(int id)
+        {
+            return _context.ProductionHistories.First(p => p.ProductionHistoryId == id);
+        }
     }
 }

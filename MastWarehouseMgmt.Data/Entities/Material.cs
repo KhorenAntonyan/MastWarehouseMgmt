@@ -10,7 +10,7 @@ namespace MastWarehouseMgmt.Data.Entities
     {
         public int MaterialId { get; set; }
         public string Name { get; set; }
-        public int Quantity { get; set; }
+        public double Quantity { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
         public bool IsDeleted { get; set; }

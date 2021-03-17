@@ -23,6 +23,6 @@ namespace MastWarehouseMgmt.Data.Entities
         public double C3 { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
-        public bool IsDeleted { get; set; }
+        public bool IsDeleted { get; set; } 
     }
 }
