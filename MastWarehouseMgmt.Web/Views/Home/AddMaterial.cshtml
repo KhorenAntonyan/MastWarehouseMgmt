@@ -1,0 +1,22 @@
+﻿@model MaterialHistoryViewModel
+
+<form class="row pt-5 justify-content-lg-around" asp-action="AddMaterial" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Дата</label>
+        <input type="date" class="form-control" asp-for="CreatedDate">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Вид сыря</label>
+        <select class="custom-select" asp-for="MaterialId" asp-items="ViewBag.Products">
+            <option selected disabled value="">Выбрать</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Количество</label>
+        <input type="number" class="form-control" asp-for="Quantity">
+    </div>
+    <div class="row form-group justify-content-center mt-3" style="width: 100%;">
+        <button type="submit" class="btn btn-success mr-5">Добавить</button>
+        <button asp-action="Material" class="btn btn-danger">Отмена</button>
+    </div>
+</form>

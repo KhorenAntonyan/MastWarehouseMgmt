@@ -387,3 +387,5 @@ D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\bin\Debug\net5.0\zh-Hant\Micros
 D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\MastWarehouseMgmt.Web.MvcApplicationPartsAssemblyInfo.cs
 D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Home\Production.cshtml.g.cs
 D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Home\AddProduction.cshtml.g.cs
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Home\Material.cshtml.g.cs
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Home\AddMaterial.cshtml.g.cs

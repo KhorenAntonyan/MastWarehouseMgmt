@@ -13,5 +13,6 @@ namespace MastWarehouseMgmt.Data.Repositories.Interfaces
         void AddMaterial(Material material);
         List<Material> GetAllMaterial();
         public void UpdateMaterials(UpdateMaterials updateMaterials);
+        public void UpdateMaterials(int id, int quantity);
     }
 }

@@ -1,0 +1,25 @@
+﻿@model List<MaterialHistoryViewModel>
+<h1 class="text-center">История закупок сыря</h1>
+<a class="btn btn-primary" asp-action="AddMaterial" role="button">Добавить</a>
+
+<table class="table table-striped mt-5 indextable">
+    <thead>
+        <tr>
+            <th scope="col">Дата</th>
+            <th scope="col">Название</th>
+            <th scope="col">Количество</th>
+            <th scope="col">Удалить</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td scope="row">@item.CreatedDate</td>
+                <td scope="row">@item.MaterialName</td>
+                <td scope="row">@item.Quantity</td>
+                <td scope="row"><button type="submit" class="btn btn-danger" onclick="location.href='@Url.Action("DeleteMaterial", "Home", new { materialHistoryId = item.MaterialHistoryId })'">Удалить</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

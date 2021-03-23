@@ -37,5 +37,12 @@ namespace MastWarehouseMgmt.Data.Repositories
             cr400.Quantity += updateMaterials.CR400;
             _context.SaveChanges();
         }
+
+        public void UpdateMaterials(int id, int quantity)
+        {
+            var Id = _context.Materials.First(a => a.MaterialId == id);
+            Id.Quantity += quantity;
+            _context.SaveChanges();
+        }
     }
 }
