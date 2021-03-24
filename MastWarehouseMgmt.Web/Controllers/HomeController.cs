@@ -17,13 +17,15 @@ namespace MastWarehouseMgmt.Web.Controllers
         private readonly IProductRepository _productRepository;
         private readonly IProductionHistoryRepository _productionHistoryRepository;
         private readonly IMaterialHistoryRepository _materialHistoryRepository;
+        private readonly ISaleHistoryRepository _saleHistoryRepository;
 
-        public HomeController(IMaterialRepository materialRepository, IProductRepository productRepository, IProductionHistoryRepository productionHistoryRepository, IMaterialHistoryRepository materialHistoryRepository)
+        public HomeController(IMaterialRepository materialRepository, IProductRepository productRepository, IProductionHistoryRepository productionHistoryRepository, IMaterialHistoryRepository materialHistoryRepository, ISaleHistoryRepository saleHistoryRepository)
         {
             _materialRepository = materialRepository;
             _productRepository = productRepository;
             _productionHistoryRepository = productionHistoryRepository;
             _materialHistoryRepository = materialHistoryRepository;
+            _saleHistoryRepository = saleHistoryRepository;
         }
 
         public IActionResult Index()
@@ -170,7 +172,7 @@ namespace MastWarehouseMgmt.Web.Controllers
 
         public IActionResult AddMaterial()
         {
-            ViewBag.Products = new SelectList(_materialRepository.GetAllMaterial(), "MaterialId", "Name");
+            ViewBag.Materials = new SelectList(_materialRepository.GetAllMaterial(), "MaterialId", "Name");
             return View();
         }
 
@@ -189,6 +191,60 @@ namespace MastWarehouseMgmt.Web.Controllers
             _materialHistoryRepository.AddMaterial(materialHistory);
 
             return RedirectToAction("Material");
+        }
+
+        public IActionResult Sale()
+        {
+            var saleHistory = _saleHistoryRepository.GetAllSales().Where(p => p.IsDeleted == false).ToList();
+            List<SaleHistoryViewModel> saleHistories = new List<SaleHistoryViewModel>();
+
+            foreach (var item in saleHistory)
+            {
+                SaleHistoryViewModel saleHistoryViewModel = new SaleHistoryViewModel
+                {
+                    ProductName = item.Product.Name,
+                    SaleHistoryId = item.SaleHistoryId,
+                    ProductId = item.ProductId,
+                    Quantity = item.Quantity,
+                    CreatedDate = item.CreatedDate
+                };
+                saleHistories.Add(saleHistoryViewModel);
+            }
+
+            return View(saleHistories);
+        }
+
+        public IActionResult DeleteSale(int saleHistoryId)
+        {
+            _saleHistoryRepository.DeleteSaleHistory(saleHistoryId);
+            var sale = _saleHistoryRepository.GetSaleById(saleHistoryId);
+            _productRepository.UpdateProduct(sale.ProductId, sale.Quantity);
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult AddSale()
+        {
+            ViewBag.Products = new SelectList(_productRepository.GetAllProducts(), "ProductId", "Name");
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddSale(SaleHistoryViewModel addSale)
+        {
+            SaleHistory saleHistory = new SaleHistory
+            {
+                SaleHistoryId = addSale.SaleHistoryId,
+                ProductId = addSale.ProductId,
+                Customer = addSale.Customer,
+                Quantity = addSale.Quantity,
+                CreatedDate = addSale.CreatedDate
+            };
+
+            _productRepository.UpdateProduct(addSale.ProductId, -addSale.Quantity);
+            _saleHistoryRepository.AddSale(saleHistory);
+
+            return RedirectToAction("Sale");
         }
     }
 }

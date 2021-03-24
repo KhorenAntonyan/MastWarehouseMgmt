@@ -1,0 +1,28 @@
+﻿@model List<SaleHistoryViewModel>
+
+<h1 class="text-center">История продаж</h1>
+<a class="btn btn-primary" asp-action="AddSale" role="button">Добавить</a>
+
+<table class="table table-striped mt-5 @*indextable*@">
+    <thead>
+        <tr>
+            <th scope="col">Дата</th>
+            <th scope="col">Покупатель</th>
+            <th scope="col">Вид продукции</th>
+            <th scope="col">Количество</th>
+            <th scope="col">Удалить</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td scope="row">@item.CreatedDate</td>
+                <td scope="row">@item.Customer</td>
+                <td scope="row">@item.ProductName</td>
+                <td scope="row">@item.Quantity</td>
+                <td scope="row"><button type="submit" class="btn btn-danger" onclick="location.href='@Url.Action("DeleteSale", "Home", new { saleHistoryId = item.SaleHistoryId })'">Удалить</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

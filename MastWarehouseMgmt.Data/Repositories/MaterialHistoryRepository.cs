@@ -38,7 +38,7 @@ namespace MastWarehouseMgmt.Data.Repositories
 
         public MaterialHistory GetMaterialById(int id)
         {
-            return _context.MaterialHistories.First(p => p.MaterialHistoryId == id);
+            return _context.MaterialHistories.First(m => m.MaterialHistoryId == id);
         }
     }
 }

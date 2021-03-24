@@ -1,13 +1,17 @@
-﻿@model MaterialHistoryViewModel
+﻿@model SaleHistoryViewModel
 
-<form class="row pt-5 justify-content-lg-around" asp-action="AddMaterial" method="post">
+<form class="row pt-5 justify-content-lg-around" asp-action="AddSale" method="post">
     <div class="form-group">
         <label for="exampleInputEmail1">Дата</label>
         <input type="date" class="form-control" asp-for="CreatedDate">
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Вид сыря</label>
-        <select class="custom-select" asp-for="MaterialId" asp-items="ViewBag.Materials">
+        <label for="exampleInputEmail1">Покупатель</label>
+        <input type="text" class="form-control" asp-for="Customer">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Вид продукции</label>
+        <select class="custom-select" asp-for="ProductId" asp-items="ViewBag.Products">
             <option selected disabled value="">Выбрать</option>
         </select>
     </div>
@@ -17,6 +21,6 @@
     </div>
     <div class="row form-group justify-content-center mt-3" style="width: 100%;">
         <button type="submit" class="btn btn-success mr-5">Добавить</button>
-        <button asp-action="Material" class="btn btn-danger">Отмена</button>
+        <button asp-action="Sale" class="btn btn-danger">Отмена</button>
     </div>
 </form>

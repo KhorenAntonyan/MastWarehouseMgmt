@@ -389,3 +389,5 @@ D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Ho
 D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Home\AddProduction.cshtml.g.cs
 D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Home\Material.cshtml.g.cs
 D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Home\AddMaterial.cshtml.g.cs
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Home\Sale.cshtml.g.cs
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Home\AddSale.cshtml.g.cs
