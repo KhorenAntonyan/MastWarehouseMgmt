@@ -11,7 +11,7 @@ namespace MastWarehouseMgmt.Data.Repositories.Interfaces
     {
         void AddProduction(ProductionHistory production);
         List<ProductionHistory> GetAllProductions();
-        void DeleteProduction(int deleteProduction);
+        void DeleteProduction(int productionHistoryId);
         ProductionHistory GetProductionById(int id);
     }
 }

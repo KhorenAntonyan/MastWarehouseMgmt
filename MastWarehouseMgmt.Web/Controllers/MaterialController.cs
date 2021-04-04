@@ -1,5 +1,7 @@
-﻿using MastWarehouseMgmt.Data.Entities;
+﻿using AutoMapper;
+using MastWarehouseMgmt.Data.Entities;
 using MastWarehouseMgmt.Data.Repositories.Interfaces;
+using MastWarehouseMgmt.Web.Infrastructure.Mappers;
 using MastWarehouseMgmt.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -15,31 +17,20 @@ namespace MastWarehouseMgmt.Web.Controllers
         private readonly IMaterialRepository _materialRepository;
         private readonly IProductRepository _productRepository;
         private readonly IMaterialHistoryRepository _materialHistoryRepository;
+        private readonly IMapper _mapper;
 
-        public MaterialController(IMaterialRepository materialRepository, IProductRepository productRepository, IMaterialHistoryRepository materialHistoryRepository)
+        public MaterialController(IMaterialRepository materialRepository, IProductRepository productRepository, IMaterialHistoryRepository materialHistoryRepository, IMapper mapper)
         {
             _materialRepository = materialRepository;
             _productRepository = productRepository;
             _materialHistoryRepository = materialHistoryRepository;
+            _mapper = mapper;
         }
 
         public IActionResult Material()
         {
             var materialHistory = _materialHistoryRepository.GetAllMaterials().Where(p => p.IsDeleted == false).ToList();
-            List<MaterialHistoryViewModel> materialHistories = new List<MaterialHistoryViewModel>();
-
-            foreach (var item in materialHistory)
-            {
-                MaterialHistoryViewModel MaterialHistoryViewModel = new MaterialHistoryViewModel
-                {
-                    MaterialName = item.Material.Name,
-                    MaterialHistoryId = item.MaterialHistoryId,
-                    MaterialId = item.MaterialId,
-                    Quantity = item.Quantity,
-                    CreatedDate = item.CreatedDate
-                };
-                materialHistories.Add(MaterialHistoryViewModel);
-            }
+            var materialHistories = _mapper.Map<List<MaterialHistory>, List<MaterialHistoryViewModel>>(materialHistory);    
 
             return View(materialHistories);
         }
@@ -62,14 +53,7 @@ namespace MastWarehouseMgmt.Web.Controllers
         [HttpPost]
         public IActionResult AddMaterial(MaterialHistoryViewModel addMaterial)
         {
-            MaterialHistory materialHistory = new MaterialHistory
-            {
-                MaterialHistoryId = addMaterial.MaterialHistoryId,
-                MaterialId = addMaterial.MaterialId,
-                Quantity = addMaterial.Quantity,
-                CreatedDate = addMaterial.CreatedDate
-            };
-
+            var materialHistory = _mapper.Map<MaterialHistory>(addMaterial);
             _materialRepository.UpdateMaterials(addMaterial.MaterialId, addMaterial.Quantity);
             _materialHistoryRepository.AddMaterial(materialHistory);
 

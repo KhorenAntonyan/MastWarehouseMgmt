@@ -18,7 +18,7 @@
                 <td scope="row">@item.CreatedDate</td>
                 <td scope="row">@item.MaterialName</td>
                 <td scope="row">@item.Quantity</td>
-                <td scope="row"><button type="submit" class="btn btn-danger" onclick="location.href='@Url.Action("DeleteMaterial", "Home", new { materialHistoryId = item.MaterialHistoryId })'">Удалить</button></td>
+                <td scope="row"><button type="submit" class="btn btn-danger" onclick="location.href='@Url.Action("DeleteMaterial", "Material", new { materialHistoryId = item.MaterialHistoryId })'">Удалить</button></td>
             </tr>
         }
     </tbody>

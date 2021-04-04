@@ -391,3 +391,5 @@ D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Ma
 D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Material\Material.cshtml.g.cs
 D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Sale\AddSale.cshtml.g.cs
 D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Sale\Sale.cshtml.g.cs
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\bin\Debug\net5.0\AutoMapper.dll
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

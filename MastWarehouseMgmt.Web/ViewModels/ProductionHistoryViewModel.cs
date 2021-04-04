@@ -11,7 +11,7 @@ namespace MastWarehouseMgmt.Web.ViewModels
 
         public string ProductName { get; set; }
         public int ProductId { get; set; }
-        public int ProductHistoryId { get; set; }
+        public int ProductionHistoryId { get; set; }
         public int Quantity { get; set; }
         public double Cement { get; set; }
         public double CR400 { get; set; }

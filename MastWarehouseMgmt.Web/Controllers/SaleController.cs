@@ -1,4 +1,5 @@
-﻿using MastWarehouseMgmt.Data.Entities;
+﻿using AutoMapper;
+using MastWarehouseMgmt.Data.Entities;
 using MastWarehouseMgmt.Data.Repositories.Interfaces;
 using MastWarehouseMgmt.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -15,31 +16,20 @@ namespace MastWarehouseMgmt.Web.Controllers
         private readonly IMaterialRepository _materialRepository;
         private readonly IProductRepository _productRepository;
         private readonly ISaleHistoryRepository _saleHistoryRepository;
+        private readonly IMapper _mapper;
 
-        public SaleController(IMaterialRepository materialRepository, IProductRepository productRepository, ISaleHistoryRepository saleHistoryRepository)
+        public SaleController(IMaterialRepository materialRepository, IProductRepository productRepository, ISaleHistoryRepository saleHistoryRepository, IMapper mapper)
         {
             _materialRepository = materialRepository;
             _productRepository = productRepository;
             _saleHistoryRepository = saleHistoryRepository;
+            _mapper = mapper;
         }
 
         public IActionResult Sale()
         {
             var saleHistory = _saleHistoryRepository.GetAllSales().Where(p => p.IsDeleted == false).ToList();
-            List<SaleHistoryViewModel> saleHistories = new List<SaleHistoryViewModel>();
-
-            foreach (var item in saleHistory)
-            {
-                SaleHistoryViewModel saleHistoryViewModel = new SaleHistoryViewModel
-                {
-                    ProductName = item.Product.Name,
-                    SaleHistoryId = item.SaleHistoryId,
-                    ProductId = item.ProductId,
-                    Quantity = item.Quantity,
-                    CreatedDate = item.CreatedDate
-                };
-                saleHistories.Add(saleHistoryViewModel);
-            }
+            var saleHistories = _mapper.Map<List<SaleHistory>, List<SaleHistoryViewModel>>(saleHistory);
 
             return View(saleHistories);
         }
@@ -62,14 +52,7 @@ namespace MastWarehouseMgmt.Web.Controllers
         [HttpPost]
         public IActionResult AddSale(SaleHistoryViewModel addSale)
         {
-            SaleHistory saleHistory = new SaleHistory
-            {
-                SaleHistoryId = addSale.SaleHistoryId,
-                ProductId = addSale.ProductId,
-                Customer = addSale.Customer,
-                Quantity = addSale.Quantity,
-                CreatedDate = addSale.CreatedDate
-            };
+            var saleHistory = _mapper.Map<SaleHistory>(addSale);
 
             _productRepository.UpdateProduct(addSale.ProductId, -addSale.Quantity);
             _saleHistoryRepository.AddSale(saleHistory);

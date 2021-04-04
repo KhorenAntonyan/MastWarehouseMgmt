@@ -37,7 +37,7 @@
                 <td scope="row">@item.Glue</td>
                 <td scope="row">@item.C3</td>
                 @*<td scope="row"><a class="btn btn-danger" href="#" role="button">Удалить</a></td>*@
-                <td scope="row"><button type="submit" class="btn btn-danger" onclick="location.href='@Url.Action("DeleteProduction", "Home", new { productionHistoryId = item.ProductHistoryId })'">Удалить</button></td>
+                <td scope="row"><button type="submit" class="btn btn-danger" onclick="location.href='@Url.Action("DeleteProduction", "Production", new { productionHistoryId = item.ProductionHistoryId })'">Удалить</button></td>
             </tr>
         }
     </tbody>
