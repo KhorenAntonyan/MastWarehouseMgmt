@@ -1,7 +1,7 @@
-﻿@model List<SaleHistoryViewModel>
+﻿@model List<OrderViewModel>
 
-<h1 class="text-center">История продаж</h1>
-<a class="btn btn-primary" asp-action="AddSale" role="button">Добавить</a>
+<h1 class="text-center">Заказы</h1>
+<a class="btn btn-primary" asp-action="AddOrder" role="button">Добавить</a>
 
 <table class="table table-striped mt-5 @*indextable*@">
     <thead>
@@ -11,6 +11,7 @@
             <th scope="col">Вид продукции</th>
             <th scope="col">Количество</th>
             <th scope="col">Удалить</th>
+            <th scope="col">Отпустил</th>
         </tr>
     </thead>
     <tbody>
@@ -21,7 +22,8 @@
                 <td scope="row">@item.Customer</td>
                 <td scope="row">@item.ProductName</td>
                 <td scope="row">@item.Quantity</td>
-                <td scope="row"><button type="submit" class="btn btn-danger" onclick="location.href='@Url.Action("DeleteSale", "Sale", new { saleHistoryId = item.SaleHistoryId })'">Удалить</button></td>
+                <td scope="row"><button type="submit" class="btn btn-danger" onclick="location.href='@Url.Action("DeleteOrder", "Order", new { orderId = item.OrderId })'">Удалить</button></td>
+                <td scope="row"><button type="submit" class="btn btn-success" onclick="location.href='@Url.Action("AddSaleHistory", "Order", new { orderId = item.OrderId })'">Отпустил</button></td>
             </tr>
         }
     </tbody>

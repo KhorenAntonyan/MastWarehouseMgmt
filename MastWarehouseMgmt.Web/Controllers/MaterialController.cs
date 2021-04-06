@@ -41,7 +41,7 @@ namespace MastWarehouseMgmt.Web.Controllers
             var material = _materialHistoryRepository.GetMaterialById(materialHistoryId);
             _materialRepository.UpdateMaterials(material.MaterialId, -material.Quantity);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult AddMaterial()

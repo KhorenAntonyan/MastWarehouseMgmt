@@ -36,8 +36,8 @@ namespace MastWarehouseMgmt.Web
             services.AddScoped<IProductionHistoryRepository, ProductionHistoryRepository>();
             services.AddScoped<IMaterialHistoryRepository, MaterialHistoryRepository>();
             services.AddScoped<ISaleHistoryRepository, SaleHistoryRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddAutoMapper(typeof(Startup).Assembly);
-            //services.AddAutoMapper(typeof(ProductionMapperConfiguration));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

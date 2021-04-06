@@ -18,5 +18,6 @@ namespace MastWarehouseMgmt.Data
         public DbSet<ProductionHistory> ProductionHistories { get; set; }
         public DbSet<MaterialHistory> MaterialHistories { get; set; }
         public DbSet<SaleHistory> SaleHistories { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

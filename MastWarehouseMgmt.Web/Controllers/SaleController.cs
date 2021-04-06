@@ -40,7 +40,7 @@ namespace MastWarehouseMgmt.Web.Controllers
             var sale = _saleHistoryRepository.GetSaleById(saleHistoryId);
             _productRepository.UpdateProduct(sale.ProductId, sale.Quantity);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult AddSale()
