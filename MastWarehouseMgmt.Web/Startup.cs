@@ -1,10 +1,12 @@
 using MastWarehouseMgmt.Data;
+using MastWarehouseMgmt.Data.Entities;
 using MastWarehouseMgmt.Data.Repositories;
 using MastWarehouseMgmt.Data.Repositories.Interfaces;
 using MastWarehouseMgmt.Web.Infrastructure.Mappers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,14 +31,22 @@ namespace MastWarehouseMgmt.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
             services.AddRazorPages().AddRazorRuntimeCompilation();
+
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MastDatabase")));
+
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MastDatabase")));
+            services.AddIdentity<User, IdentityRole>()
+                                .AddEntityFrameworkStores<ApplicationContext>();
+
             services.AddScoped<IMaterialRepository, MaterialRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductionHistoryRepository, ProductionHistoryRepository>();
             services.AddScoped<IMaterialHistoryRepository, MaterialHistoryRepository>();
             services.AddScoped<ISaleHistoryRepository, SaleHistoryRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
+
             services.AddAutoMapper(typeof(Startup).Assembly);
         }
 
@@ -51,7 +61,10 @@ namespace MastWarehouseMgmt.Web
             app.UseStaticFiles();
 
             app.UseRouting();
-            
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {

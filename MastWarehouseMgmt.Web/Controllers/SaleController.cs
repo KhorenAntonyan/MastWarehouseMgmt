@@ -2,6 +2,7 @@
 using MastWarehouseMgmt.Data.Entities;
 using MastWarehouseMgmt.Data.Repositories.Interfaces;
 using MastWarehouseMgmt.Web.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace MastWarehouseMgmt.Web.Controllers
 {
+    [Authorize]
     public class SaleController : Controller
     {
         private readonly IMaterialRepository _materialRepository;
@@ -28,7 +30,7 @@ namespace MastWarehouseMgmt.Web.Controllers
 
         public IActionResult Sale()
         {
-            var saleHistory = _saleHistoryRepository.GetAllSales().Where(p => p.IsDeleted == false).ToList();
+            var saleHistory = _saleHistoryRepository.GetAllSales().Where(p => p.IsDeleted == false).OrderByDescending(p => p.CreatedDate).ToList();
             var saleHistories = _mapper.Map<List<SaleHistory>, List<SaleHistoryViewModel>>(saleHistory);
 
             return View(saleHistories);

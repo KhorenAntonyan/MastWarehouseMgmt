@@ -2,6 +2,7 @@
 using MastWarehouseMgmt.Data.Models;
 using MastWarehouseMgmt.Data.Repositories.Interfaces;
 using MastWarehouseMgmt.Web.ViewModels;
+using Microsoft.AspNetCore.Authorization;//
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace MastWarehouseMgmt.Web.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly IMaterialRepository _materialRepository;

@@ -3,6 +3,7 @@ using MastWarehouseMgmt.Data.Entities;
 using MastWarehouseMgmt.Data.Repositories.Interfaces;
 using MastWarehouseMgmt.Web.Infrastructure.Mappers;
 using MastWarehouseMgmt.Web.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace MastWarehouseMgmt.Web.Controllers
 {
+    [Authorize]
     public class MaterialController : Controller
     {
         private readonly IMaterialRepository _materialRepository;
@@ -29,7 +31,7 @@ namespace MastWarehouseMgmt.Web.Controllers
 
         public IActionResult Material()
         {
-            var materialHistory = _materialHistoryRepository.GetAllMaterials().Where(p => p.IsDeleted == false).ToList();
+            var materialHistory = _materialHistoryRepository.GetAllMaterials().Where(m => m.IsDeleted == false).OrderByDescending(m => m.CreatedDate).ToList();
             var materialHistories = _mapper.Map<List<MaterialHistory>, List<MaterialHistoryViewModel>>(materialHistory);    
 
             return View(materialHistories);

@@ -3,6 +3,7 @@ using MastWarehouseMgmt.Data.Entities;
 using MastWarehouseMgmt.Data.Models;
 using MastWarehouseMgmt.Data.Repositories.Interfaces;
 using MastWarehouseMgmt.Web.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace MastWarehouseMgmt.Web.Controllers
 {
+    [Authorize]
     public class ProductionController : Controller
     {
         private readonly IMaterialRepository _materialRepository;
@@ -28,7 +30,7 @@ namespace MastWarehouseMgmt.Web.Controllers
         }
         public IActionResult Production()
         {
-            var productionHistory = _productionHistoryRepository.GetAllProductions().Where(p => p.IsDeleted == false).ToList();
+            var productionHistory = _productionHistoryRepository.GetAllProductions().Where(p => p.IsDeleted == false).OrderByDescending(p => p.CreatedDate).ToList();
 
             var productionHistoryViewModel = _mapper.Map<List<ProductionHistory>, List<ProductionHistoryViewModel>>(productionHistory);
 

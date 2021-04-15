@@ -2,6 +2,7 @@
 using MastWarehouseMgmt.Data.Entities;
 using MastWarehouseMgmt.Data.Repositories.Interfaces;
 using MastWarehouseMgmt.Web.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace MastWarehouseMgmt.Web.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly IProductRepository _productRepository;
@@ -29,7 +31,7 @@ namespace MastWarehouseMgmt.Web.Controllers
 
         public IActionResult Order()
         {
-            var order = _order.GetAllOrders().Where(o => o.IsDeleted == false).ToList();
+            var order = _order.GetAllOrders().Where(o => o.IsDeleted == false).OrderByDescending(o => o.CreatedDate).ToList();
             var orders = _mapper.Map<List<OrderViewModel>>(order);
             return View(orders);
         }

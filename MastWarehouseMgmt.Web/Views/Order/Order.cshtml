@@ -1,7 +1,10 @@
 ﻿@model List<OrderViewModel>
 
 <h1 class="text-center">Заказы</h1>
-<a class="btn btn-primary" asp-action="AddOrder" role="button">Добавить</a>
+@if (ViewContext.HttpContext.User.IsInRole("admin"))
+{
+    <a class="btn btn-primary" asp-action="AddOrder" role="button">Добавить</a>
+}
 
 <table class="table table-striped mt-5 @*indextable*@">
     <thead>
