@@ -5,10 +5,12 @@
         <div class="form-group">
             <label for="exampleInputEmail1">Дата</label>
             <input type="date" class="form-control" asp-for="CreatedDate">
+            <span asp-validation-for="CreatedDate" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Цемент</label>
             <input type="number" class="form-control" asp-for="Cement">
+            <span asp-validation-for="Cement" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Гипс</label>
@@ -26,10 +28,12 @@
                 <option selected disabled value="">Выбрать</option>
 
             </select>
+            <span asp-validation-for="ProductId" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">CR400</label>
             <input type="number" class="form-control" asp-for="CR400">
+            <span asp-validation-for="CR400" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Литий</label>
@@ -44,10 +48,12 @@
         <div class="form-group">
             <label for="exampleInputEmail1">Количество</label>
             <input type="number" class="form-control" asp-for="Quantity">
+            <span asp-validation-for="Quantity" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Песок</label>
             <input type="number" class="form-control" asp-for="Sand">
+            <span asp-validation-for="Sand" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Акронал</label>

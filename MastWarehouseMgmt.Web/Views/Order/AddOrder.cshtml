@@ -4,20 +4,24 @@
     <div class="form-group">
         <label for="exampleInputEmail1">Дата</label>
         <input type="date" class="form-control" asp-for="CreatedDate">
+        <span asp-validation-for="CreatedDate" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Покупатель</label>
         <input type="text" class="form-control" asp-for="Customer">
+        <span asp-validation-for="Customer" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Вид продукции</label>
         <select class="custom-select" asp-for="ProductId" asp-items="ViewBag.Products">
             <option selected disabled value="">Выбрать</option>
         </select>
+        <span asp-validation-for="ProductId" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Количество</label>
         <input type="number" class="form-control" asp-for="Quantity">
+        <span asp-validation-for="Quantity" class="text-danger"></span>
     </div>
     <div class="row form-group justify-content-center mt-3" style="width: 100%;">
         <button type="submit" class="btn btn-success mr-5">Добавить</button>

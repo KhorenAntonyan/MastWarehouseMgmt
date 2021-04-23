@@ -1,4 +1,4 @@
-using MastWarehouseMgmt.Data;
+﻿using MastWarehouseMgmt.Data;
 using MastWarehouseMgmt.Data.Entities;
 using MastWarehouseMgmt.Data.Repositories;
 using MastWarehouseMgmt.Data.Repositories.Interfaces;
@@ -26,19 +26,22 @@ namespace MastWarehouseMgmt.Web
         {
             Configuration = configuration;
         }
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
 
-            services.AddRazorPages().AddRazorRuntimeCompilation();
+            services.AddRazorPages().AddRazorRuntimeCompilation()
+                .AddMvcOptions(options =>
+                {
+                    options.MaxModelValidationErrors = 50;
+                    options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(
+                        _ => "Не указано");
+                }); ;
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MastDatabase")));
 
-            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MastDatabase")));
             services.AddIdentity<User, IdentityRole>()
-                                .AddEntityFrameworkStores<ApplicationContext>();
+                                .AddEntityFrameworkStores<AppDbContext>();
 
             services.AddScoped<IMaterialRepository, MaterialRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
@@ -50,7 +53,6 @@ namespace MastWarehouseMgmt.Web
             services.AddAutoMapper(typeof(Startup).Assembly);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

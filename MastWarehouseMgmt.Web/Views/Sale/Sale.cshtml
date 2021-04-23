@@ -1,7 +1,10 @@
 ﻿@model List<SaleHistoryViewModel>
 
 <h1 class="text-center">История продаж</h1>
-<a class="btn btn-primary" asp-action="AddSale" role="button">Добавить</a>
+<div class="d-flex mt-5 justify-content-between">
+    <a class="btn btn-primary" asp-action="AddSale" role="button">Добавить</a>
+    <a class="btn btn-success" asp-action="Excel" role="button">Выгрузить в Excel</a>
+</div>
 
 <table class="table table-striped mt-5 @*indextable*@">
     <thead>

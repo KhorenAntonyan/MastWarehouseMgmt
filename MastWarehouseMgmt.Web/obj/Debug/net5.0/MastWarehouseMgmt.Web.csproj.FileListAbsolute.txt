@@ -397,3 +397,7 @@ D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\bin\Debug\net5.0\Microsoft.AspN
 D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
 D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\bin\Debug\net5.0\ClosedXML.dll
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\bin\Debug\net5.0\DocumentFormat.OpenXml.dll
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\bin\Debug\net5.0\ExcelNumberFormat.dll
+D:\repos\MastWarehouseMgmt\MastWarehouseMgmt.Web\bin\Debug\net5.0\System.IO.Packaging.dll
